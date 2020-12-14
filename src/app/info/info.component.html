@@ -1,0 +1,32 @@
+<div class="sections">
+    <mat-card class="airflow" *ngIf="currentSection== 0">
+        <h1>Ventilation Units</h1>
+        <mat-card>
+            <fa-icon [icon]="fan"></fa-icon>
+            <p>In ventk2 you can set your own airflow</p>
+            <p>If you are <strong>Zealand</strong> area you may experience the airflow of <strong>25-30
+                    cf/m</strong> in normal day.
+            </p>
+            <hr>
+            <button mat-button id="next-button" (click)="changeSection(1)">Next</button>
+        </mat-card>
+
+    </mat-card>
+
+    <mat-card class="airflow" *ngIf="currentSection== 1">
+        <h1>Temperature</h1>
+        <mat-card>
+            <img src="../../assets/humantemp.gif">
+            <p>A safe temperature is accepted to be between <strong>68- and 74-degrees Fahrenheit</strong> for
+                people above the age
+                of 65.<br> If you feel cold you can choose to stay in Warm through <strong>ventk2 app</strong>.<br>
+                If you feel warm
+                you can make your climate zone warm.
+
+            </p>
+            <hr>
+            <button mat-button id="next-button" (click)="goToquiz()">Next</button>
+        </mat-card>
+
+    </mat-card>
+</div>

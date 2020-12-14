@@ -1,0 +1,51 @@
+.selectZone{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.zone{
+  width: 45%;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  background-color: rgba(86, 88, 150, 0.51);
+  color: white;
+}
+.zone{
+  padding: 10px;
+  max-width: 45%;
+  display: grid;
+  grid-template-areas:
+            "hl hl hl"
+            ". . ."
+            ". . .";
+
+  column-gap: 5px;
+  align-content: center;
+}
+.dropDowns{
+  width: 90%;
+  margin: 10px 20px;
+  background-color: rgba(86, 88, 150, 0.51);
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+mat-label{
+  color: white;
+  font-size: 16pt;
+
+}
+.selectValue{
+  font-size: 15pt;
+  color: white;
+}
+.ng-star-inserted{
+  font-size: 18pt;
+}
+
+.select{
+  background-color: rgba(86, 88, 150, 0.51);
+  color: white;
+}

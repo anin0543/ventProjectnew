@@ -1,0 +1,45 @@
+    <mat-form-field class="dropDowns" appearance="no-line">
+      <mat-label mat-raised>Choose a Room</mat-label>
+      <mat-select class="selectValue" matNativeControl>
+        <mat-option
+          *ngFor="let room of rooms; index as i;"
+          value="{{room.id}}"
+          (onSelectionChange)="setRoom(room.id)"
+        >
+          {{room.id}} - {{room.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="no-line" class="dropDowns">
+
+      <mat-label>{{ currentRoom == null ? "---" : "Select Zone" }}</mat-label>
+      <mat-select matNativeControl [(value)]="currentZoneId">
+        <mat-option
+          *ngFor="let zone of zones index as i;"
+          (onSelectionChange)="setZone(zone.id, i)"
+          value="{{i}}"
+        >
+          <mat-icon>view_module</mat-icon>
+          {{ i + 1 }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <div class="selectZone">
+      <div class="zone"
+           *ngFor="let zone of zones index as i;"
+           (click)="setZone(zone.id, i)"
+      >
+<!--        <p>Current Air Flow : 100</p>-->
+        <div *ngFor="let seat of seats;">
+          <mat-icon *ngIf="seat.zone_id === zone.id"
+            [ngStyle]="{'color':seat.occupied === false ? 'red' : 'green'}"
+          >
+            chair
+          </mat-icon>
+        </div>
+
+      </div>
+    </div>
+<!--</mat-expansion-panel>-->
